@@ -1,0 +1,11 @@
+#Ingredient {
+    width: 200px;
+
+}
+
+.IngredientBox {
+    border: 1px solid grey;
+    margin-top: 40px;
+    width: 480px;
+    height: 20em;
+}
