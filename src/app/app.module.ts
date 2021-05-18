@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SearchByIngredientsComponent } from './search-by-ingredients/search-by-ingredients.component';
 import { SearchByCuisineComponent } from './search-by-cuisine/search-by-cuisine.component';
+import { ShowRecipeComponent } from './show-recipe/show-recipe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     SearchByIngredientsComponent,
-    SearchByCuisineComponent
+    SearchByCuisineComponent,
+    ShowRecipeComponent
   ],
   imports: [
     BrowserModule,
