@@ -3,9 +3,25 @@
 
 }
 
-.IngredientBox {
-    border: 1px solid grey;
-    margin-top: 40px;
-    width: 480px;
+.card-body{
     height: 20em;
+}
+
+img{
+    width: 100px;
+}
+
+.result-text {
+    margin: 10px;
+
+}
+
+p {
+    line-height: 10px;
+}
+
+.missing-ingredient {
+    font-style: italic;
+    font-size: smaller;
+    color: red;
 }
