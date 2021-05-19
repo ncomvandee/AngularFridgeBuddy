@@ -6,9 +6,7 @@
             <div class="input-group">
                 <select class="custom-select" id="Ingredient">
                   <option selected>Choose...</option>
-                  <option value="1">Egg</option>
-                  <option value="2">Brocolli</option>
-                  <option value="3">Beef</option>
+                  <option *ngFor="let ingredient of ingredientsArray" (click)="onSelectIngredient" value="">{{ingredient}}</option> 
                 </select>
             </div>
             <br>
@@ -16,11 +14,7 @@
     
             <div class="card">
                 <div class="card-body">
-                    <li>Item 1</li>
-                    <li>Item 1</li>
-                    <li>Item 1</li>
-                    <li>Item 1</li>
-                    <li>Item 1</li>
+                    <li *ngFor="let selectedIngredient of selectedIngredients">{{selectedIngredient}}</li>
                 </div>
             </div>
     

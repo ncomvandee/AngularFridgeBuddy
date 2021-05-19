@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchByIngredientsComponent implements OnInit {
 
-  constructor() { }
+  public ingredientsArray: Array<string>;
+  public selectedIngredients: Array<string>;
+
+  constructor() {
+    this.ingredientsArray = ['Egg','Broccolli', 'Beef'];
+    this.selectedIngredients = [];
+   }
+
+   onSelecteIngredient() {
+     
+   }
 
   ngOnInit(): void {
   }
