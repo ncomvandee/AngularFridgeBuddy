@@ -14,7 +14,7 @@
     
             <div class="card">
                 <div class="card-body">
-                    <li *ngFor="let selectedIngredient of selectedIngredients">{{selectedIngredient}}</li>
+                    <li *ngFor="let selectedIngredient of selectedIngredients">{{selectedIngredient}}<span class="pull-right"><button (click)="removeIngredient(selectedIngredient)" id="remove-icon"><i class="fas fa-trash"></i></button></span><hr></li>
                 </div>
             </div>
     

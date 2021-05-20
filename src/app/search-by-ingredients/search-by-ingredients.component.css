@@ -25,3 +25,12 @@ p {
     font-size: smaller;
     color: red;
 }
+
+li {
+    list-style-type: none;
+}
+
+#remove-icon {
+    border: none;
+    background-color: transparent;
+}

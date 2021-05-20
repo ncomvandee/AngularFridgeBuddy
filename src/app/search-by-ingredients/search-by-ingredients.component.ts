@@ -24,6 +24,10 @@ export class SearchByIngredientsComponent implements OnInit {
      this.selectedIngredients = new Set;
    }
 
+   removeIngredient(ingredient: any) {
+     this.selectedIngredients.delete(ingredient);
+   }
+
   ngOnInit(): void {
   }
 
