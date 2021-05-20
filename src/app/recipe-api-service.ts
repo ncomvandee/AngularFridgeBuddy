@@ -10,8 +10,19 @@ export class RecipeApiService{
 
   constructor(private http: HttpClient){}
 
-  getRecipes()
-    {
+  getRecipes() {
       return this.http.get(this.url);
+  }
+
+  searchByIngredients(ingredientsArray: Set<string>) {
+    let query = '';
+
+    for (let ingredient of ingredientsArray) {
+      let temp = 'array=' + ingredient + '&';
+      query += temp;
     }
+
+    return this.http.get(this.url + '/byIngredients?' + query );
+  }
+
 }
