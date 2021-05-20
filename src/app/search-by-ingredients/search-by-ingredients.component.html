@@ -4,9 +4,9 @@
     <div class="row">
         <div class="col-md-6">
             <div class="input-group">
-                <select class="custom-select" id="Ingredient">
+                <select (change)="onSelectIngredient($event.target.value)" class="custom-select" id="Ingredient">
                   <option selected>Choose...</option>
-                  <option *ngFor="let ingredient of ingredientsArray" (click)="onSelectIngredient" value="">{{ingredient}}</option> 
+                  <option  *ngFor="let ingredient of ingredientsArray"  value="{{ingredient}}">{{ingredient}}</option> 
                 </select>
             </div>
             <br>

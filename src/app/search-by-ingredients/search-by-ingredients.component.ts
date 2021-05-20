@@ -15,8 +15,9 @@ export class SearchByIngredientsComponent implements OnInit {
     this.selectedIngredients = [];
    }
 
-   onSelecteIngredient() {
-     
+   onSelectIngredient(ingredient: any) {
+
+     this.selectedIngredients.push(ingredient);
    }
 
   ngOnInit(): void {
