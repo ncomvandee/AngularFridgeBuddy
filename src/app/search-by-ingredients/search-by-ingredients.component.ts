@@ -8,16 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class SearchByIngredientsComponent implements OnInit {
 
   public ingredientsArray: Array<string>;
-  public selectedIngredients: Array<string>;
+  public selectedIngredients: Set<string>;
 
   constructor() {
     this.ingredientsArray = ['Egg','Broccolli', 'Beef'];
-    this.selectedIngredients = [];
+    this.selectedIngredients = new Set;
    }
 
    onSelectIngredient(ingredient: any) {
+     this.selectedIngredients.add(ingredient);
+     
+   }
 
-     this.selectedIngredients.push(ingredient);
+   clearList() {
+     this.selectedIngredients = new Set;
    }
 
   ngOnInit(): void {
