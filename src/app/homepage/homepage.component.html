@@ -21,12 +21,8 @@
             <img class="card-img-top" src={{recipe.recipeImage}} alt="Card image cap" width="100" height="250">
             <div class="card-body">
                 <h4 class="card-title">Name: {{recipe.recipeName}}</h4>
-                <h4 class="rating card-text">Rating: </h4>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                <h4 class="rating card-text">Rating:</h4>
+                    <span *ngFor="let rate of [].constructor(recipe.avgRate)" class="fa fa-star"></span>
                 <div class="col-md-12 text-center">
                     <a href="#" class="btn btn-primary btn-lg">View</a>
                 </div>
