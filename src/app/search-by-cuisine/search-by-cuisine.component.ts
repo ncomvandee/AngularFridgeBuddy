@@ -12,4 +12,9 @@ export class SearchByCuisineComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cuisine: string = '';
+  searchRecipe(){
+    console.log("XXXXXXXX: ", this.cuisine);
+  }
+
 }
