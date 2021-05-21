@@ -9,6 +9,7 @@
 
 img{
     width: 100px;
+    height: 80px;
 }
 
 .result-text {
@@ -33,4 +34,10 @@ li {
 #remove-icon {
     border: none;
     background-color: transparent;
+}
+
+#star-icon {
+    font-size: smaller;
+    vertical-align: middle;
+    color: gold;
 }

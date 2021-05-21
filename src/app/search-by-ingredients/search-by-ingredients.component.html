@@ -36,7 +36,7 @@
                             <div class="col-md-9">
                                 <div class="result-text">
                                     <p>{{result.recipeName}}</p>
-                                    <p>Rating: ****</p>
+                                    <p>Rating: <i *ngFor="let rate of [].constructor(result.avgRage)" id="star-icon" class="fas fa-star"></i></p>
                                     <p class="missing-ingredient">3 ingredients missing</p>
                                 </div>
                             </div>
