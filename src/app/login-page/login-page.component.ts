@@ -1,4 +1,4 @@
-import { Component, Directive, Input, OnDestroy, OnInit, SimpleChange } from '@angular/core';
+import { Component, Directive, Input,Output, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChange, ElementRef } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { UserApiService } from '../user-api.service';
@@ -12,8 +12,18 @@ import { UserApiService } from '../user-api.service';
 
 export class LoginPageComponent implements OnInit, OnDestroy { 
   body:any;
+  
+  @Input() user:string;
+  @Input() show:boolean = true;
+  @Output() outToParent = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(readonly element: ElementRef<HTMLElement>) {
+    // this.element.nativeElement.remove();
+
+  }
+
+
+
     addNewUser(userService: UserApiService) { 
       userService.addUser(this.body).subscribe((result: any) =>
       {
@@ -21,22 +31,9 @@ export class LoginPageComponent implements OnInit, OnDestroy {
       });
     }
 
-    getUserInputs(username, password){
-    console.warn(username)
-    console.warn(password)
-     this.body = {
-      "userId": username,
-      "password": password,
-      "email": "",
-      "firstName": "",
-      "lastName": "",
-      "isPremium": false,
-      "favoriteList": [],
-      "recentlyView": []
-    }
-
-    console.warn( this.body);
-
+    sendUserInputs(username, password){
+  
+    this.outToParent.emit(username);
   }
 
  

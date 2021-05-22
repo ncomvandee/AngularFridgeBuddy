@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" *ngIf="show" >
     <br />
     <br />
     <br />
@@ -25,10 +25,14 @@
                         <label class="sr-only" for="form-password">Password</label>
                         <input type="password" #Userpassword name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
                     </div>
-                    <a  id ="submitButton" [routerLink]="['/home']"  class="btn btn-lg btn-lg" (click)="getUserInputs(username.value, Userpassword.value)"> Submit </a>         
+                   
+                    <a  id ="submitButton" [routerLink]="['/home']"  class="btn btn-lg btn-lg" (click)="sendUserInputs(username.value, Userpassword.value)"> Submit </a>  
+                     <p></p> 
+                     <p></p>   
+                     <p></p>
+       
                 </form>
             </div>
         </div>
     </div>
-   
 </div>
