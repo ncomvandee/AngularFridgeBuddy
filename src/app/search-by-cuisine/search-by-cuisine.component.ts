@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeApiService} from '../recipe-api-service';
 
 @Component({
   selector: 'app-search-by-cuisine',
@@ -7,14 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchByCuisineComponent implements OnInit {
 
-  constructor() { }
+  public recipeApiService: RecipeApiService;
+  public result: any;
+  foundCuisine: boolean;
+
+  constructor(service: RecipeApiService) { 
+    this.recipeApiService = service;
+    this.result = null;
+    this.foundCuisine = false;
+  }
 
   ngOnInit(): void {
   }
 
-  cuisine: string = '';
-  searchRecipe(){
-    console.log("XXXXXXXX: ", this.cuisine);
+  searchRecipe(cuisine){
+    if (cuisine.length) {
+      this.recipeApiService.searchByCuisine(cuisine).subscribe((result: any) => {
+        this.result = result;
+        this.foundCuisine = true;
+        console.warn(result);
+      })
+    }
+    else {
+      this.foundCuisine = false;
+      this.result = null;
+    }
   }
 
 }

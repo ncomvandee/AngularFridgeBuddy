@@ -1,3 +1,38 @@
 .card-body{
     height: 20em;
 }
+
+img{
+    width: 100px;
+    height: 80px;
+}
+
+.result-text {
+    margin: 10px;
+
+}
+
+p {
+    line-height: 10px;
+}
+
+.missing-ingredient {
+    font-style: italic;
+    font-size: smaller;
+    color: red;
+}
+
+li {
+    list-style-type: none;
+}
+
+#remove-icon {
+    border: none;
+    background-color: transparent;
+}
+
+#star-icon {
+    font-size: smaller;
+    vertical-align: middle;
+    color: gold;
+}
