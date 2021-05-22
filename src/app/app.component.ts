@@ -18,59 +18,44 @@ export class AppComponent  {
      console.warn(element.nativeElement);
      this.DisplayLogIn = false;
   }
- 
- 
 
-  GetuserNameVal(name:string){
-      if(name)
-      {
+  GetuserNameVal(name:string) {
+    if(name) {
       this.currentUser = "Hi "+ name + "!";
-      }
-      this.DisplayLogIn = false;
-    
-   
+    }
+    this.DisplayLogIn = false;
   }
 
-  ChangeLoginStats()
-  {
-    if(this.currentUser != "Login / Sign Up")
-    {
+  ChangeLoginStats() {
+    if(this.currentUser != "Login / Sign Up") {
       this.DisplayLogIn = false;
       this.alreadyLoggedIn = true;
-    }
-    else{
+    } else {
        this.DisplayLogIn = true;
     }
   }
 
-  ChangeCusinStats()
-  {
-      if(this.currentUser == "Login / Sign Up")
-      {
-        this.DisplayLogIn = false;
-        
-      }else{
-        this.alreadyLoggedIn = false;
-      }
-  }
-  ChangeIngeredientStats()
-  {
-      if(this.currentUser == "Login / Sign Up")
-      {
-        this.DisplayLogIn = false;
-
-      }else{
-        this.alreadyLoggedIn = false;
-      }
-  }
-  ChangeHomePageStats()
-  {
-    this.alreadyLoggedIn = false;
-    if(this.currentUser == "Login / Sign Up")
-    {
+  ChangeCusinStats() {
+    if(this.currentUser == "Login / Sign Up") {
       this.DisplayLogIn = false;
+    } else {
+      this.alreadyLoggedIn = false;
+    }
+  }
+  
+  ChangeIngeredientStats() {
+    if(this.currentUser == "Login / Sign Up") {
+      this.DisplayLogIn = false;
+    } else {
+      this.alreadyLoggedIn = false;
+    }
+  }
 
-    }else{
+  ChangeHomePageStats() {
+    this.alreadyLoggedIn = false;
+    if(this.currentUser == "Login / Sign Up") {
+      this.DisplayLogIn = false;
+    } else {
       this.alreadyLoggedIn = false;
     }
   }

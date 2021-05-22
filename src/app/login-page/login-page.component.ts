@@ -19,26 +19,18 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
   constructor(readonly element: ElementRef<HTMLElement>) {
     // this.element.nativeElement.remove();
-
   }
 
+  addNewUser(userService: UserApiService) { 
+    userService.addUser(this.body).subscribe((result: any) =>
+    {
+      console.log(result);
+    });
+  }
 
-
-    addNewUser(userService: UserApiService) { 
-      userService.addUser(this.body).subscribe((result: any) =>
-      {
-        console.log(result);
-      });
-    }
-
-    sendUserInputs(username, password){
-  
+  sendUserInputs(username, password){
     this.outToParent.emit(username);
   }
-
- 
-
-
 
   ngOnChanges(changes: SimpleChange){
       for (const propName in changes){
@@ -51,8 +43,6 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    
   }
-
 
 }
