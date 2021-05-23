@@ -16,3 +16,9 @@ body {
     border-width: thin;
     margin-top: 10px;
 }
+
+ngb-rating {
+    color: #9c07ff;
+    font-size: 25px;
+    margin-left: 30px;
+}

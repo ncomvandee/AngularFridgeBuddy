@@ -15,6 +15,8 @@ export class ShowRecipeComponent implements OnInit {
   id: string;
   private sub: any;
 
+  starRating = 0;
+
   constructor(service: RecipeApiService, private route: ActivatedRoute) { 
     this.recipeApiService = service;
 

@@ -23,7 +23,11 @@
                         <mat-label>Leave a comment</mat-label>
                         <textarea matInput placeholder="Ex. I love this recipe"></textarea>
                     </mat-form-field>
+                    <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
                 </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary">Submit</button>
+                </mat-card-actions>
             </mat-card>
         </div> 
         <div class="col">
@@ -63,10 +67,6 @@
                             {{review.comment}}
                         </p>
                         </mat-card-content>
-                        <mat-card-actions>
-                        <button mat-button>LIKE</button>
-                        <button mat-button>SHARE</button>
-                        </mat-card-actions>
                     </mat-card>
                 </mat-tab>
             </mat-tab-group>
