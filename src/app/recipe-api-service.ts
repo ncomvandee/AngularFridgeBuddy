@@ -33,4 +33,8 @@ export class RecipeApiService{
     return this.http.get(this.url + '/find/' + recipeId);
   }
 
+  getReviewsForRecipe(recipeId: string) {
+    return this.http.get(this.url + '/getReviewList/' + recipeId);
+  }
+  
 }
