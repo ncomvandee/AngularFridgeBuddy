@@ -24,7 +24,7 @@
                 <h4 class="rating card-text">Rating:</h4>
                     <span *ngFor="let rate of [].constructor(recipe.avgRate)" class="fa fa-star"></span>
                 <div class="col-md-12 text-center">
-                    <a [routerLink]="['/showRecipe']" class="btn btn-primary btn-lg" (click)="showSingleRecipe(i + 1)">View</a>
+                    <a [routerLink]="['/showRecipe', recipe.recipeId]" class="btn btn-primary btn-lg">View</a>
                 </div>
             </div>	
         </div>

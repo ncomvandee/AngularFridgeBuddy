@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'byIngredient', component: SearchByIngredientsComponent },
   { path: 'byCuisine', component: SearchByCuisineComponent },
-  { path: 'showRecipe', component: ShowRecipeComponent },
+  { path: 'showRecipe/:id', component: ShowRecipeComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'account', component: UserAccountPageComponent }
 ];
