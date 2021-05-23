@@ -16,6 +16,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import { YouTubePlayerModule } from "@angular/youtube-player";
+import { UserAccountPageComponent } from './user-account-page/user-account-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
     SearchByIngredientsComponent,
     SearchByCuisineComponent,
     ShowRecipeComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    UserAccountPageComponent
   ],
   imports: [
     BrowserModule,

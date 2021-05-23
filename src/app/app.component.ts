@@ -1,5 +1,6 @@
 import { ElementRef, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,7 @@ export class AppComponent  {
   currentUser:string = "Login / Sign Up";
 
 
-  constructor(readonly element: ElementRef<HTMLElement>) {
-     console.warn(element.nativeElement);
+  constructor(public router : Router) {
      this.DisplayLogIn = false;
   }
 
@@ -30,6 +30,7 @@ export class AppComponent  {
     if(this.currentUser != "Login / Sign Up") {
       this.DisplayLogIn = false;
       this.alreadyLoggedIn = true;
+      this.router.navigate(['/account']);
     } else {
        this.DisplayLogIn = true;
     }

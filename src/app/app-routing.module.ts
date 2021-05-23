@@ -5,6 +5,7 @@ import {LoginPageComponent} from './login-page/login-page.component';
 import { SearchByIngredientsComponent } from './search-by-ingredients/search-by-ingredients.component';
 import { SearchByCuisineComponent } from './search-by-cuisine/search-by-cuisine.component';
 import { ShowRecipeComponent } from './show-recipe/show-recipe.component';
+import { UserAccountPageComponent } from './user-account-page/user-account-page.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'byIngredient', component: SearchByIngredientsComponent },
   { path: 'byCuisine', component: SearchByCuisineComponent },
   { path: 'showRecipe', component: ShowRecipeComponent },
-  { path: 'login', component: LoginPageComponent }
+  { path: 'login', component: LoginPageComponent },
+  { path: 'account', component: UserAccountPageComponent }
 ];
 
 @NgModule({
