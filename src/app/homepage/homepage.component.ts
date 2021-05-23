@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import {RecipeApiService} from '../recipe-api-service'
 
 
@@ -8,13 +8,17 @@ import {RecipeApiService} from '../recipe-api-service'
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  
+  @Output() currentRecipe: any
   recipes : any;
   constructor(recipeService: RecipeApiService) { 
     recipeService.getRecipes().subscribe((result: any) =>
     {
         this.recipes = result;
     });
+  }
+
+  showSingleRecipe(recipeId) {
+    this.currentRecipe = recipeId;
   }
 
   ngOnInit(): void {

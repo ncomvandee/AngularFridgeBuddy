@@ -9,6 +9,12 @@ import { SearchByIngredientsComponent } from './search-by-ingredients/search-by-
 import { SearchByCuisineComponent } from './search-by-cuisine/search-by-cuisine.component';
 import { ShowRecipeComponent } from './show-recipe/show-recipe.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatInputModule} from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +28,12 @@ import { LoginPageComponent } from './login-page/login-page.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTabsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

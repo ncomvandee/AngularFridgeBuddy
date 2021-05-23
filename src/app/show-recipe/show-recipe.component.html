@@ -1,1 +1,31 @@
-<p>show-recipe works!</p>
+<br>
+<br>
+<div class="row">
+    <h2>{{recipe.recipeName}}</h2>
+    <button mat-icon-button disabled aria-label="Example icon-button with a heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+</div>
+
+<div class="row">
+    <div class="col">
+        <img src={{recipe.recipeImage}}>
+    </div> 
+    <div class="col">
+        <mat-form-field class="example-full-width">
+            <mat-label>Leave a comment</mat-label>
+            <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+    </div>    
+</div>
+
+<br><br><br>
+
+<div class="row">
+    <mat-tab-group mat-align-tabs="start">
+        <mat-tab label="Description"> {{recipe.description}} </mat-tab>
+        <mat-tab label="Instruction"> {{recipe.instruction}} </mat-tab>
+        <mat-tab label="Video"> Content 3 </mat-tab>
+        <mat-tab label="Comments"> Content 3 </mat-tab>
+    </mat-tab-group>
+</div>

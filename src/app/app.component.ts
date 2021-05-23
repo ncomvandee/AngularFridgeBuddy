@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
  
-  title = 'FridgeBuddy-ng';
+  title = 'FridgeBuddy';
   DisplayLogIn:boolean = true;
   alreadyLoggedIn:boolean = false;
   currentUser:string = "Login / Sign Up";

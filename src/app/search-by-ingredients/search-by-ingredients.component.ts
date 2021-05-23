@@ -15,7 +15,7 @@ export class SearchByIngredientsComponent implements OnInit {
   public recipeApiService: RecipeApiService;
 
   constructor(service: RecipeApiService) {
-    this.ingredientsArray = ['Egg','Broccolli', 'Beef', 'Salmon'];
+    this.ingredientsArray = ['Egg','Broccoli', 'Beef', 'Salmon'];
     this.selectedIngredients = new Set;
     this.resultArray = [];
     this.recipeApiService = service;

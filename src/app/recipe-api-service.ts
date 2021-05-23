@@ -29,4 +29,8 @@ export class RecipeApiService{
     return this.http.get(this.url + '/byCuisine/' + cuisine);
   }
 
+  getRecipeById(recipeId: string) {
+    return this.http.get(this.url + '/find/' + recipeId);
+  }
+
 }
