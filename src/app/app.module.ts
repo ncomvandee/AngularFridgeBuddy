@@ -15,7 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-
+import { YouTubePlayerModule } from "@angular/youtube-player";
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatTabsModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

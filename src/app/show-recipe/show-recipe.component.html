@@ -25,7 +25,14 @@
     <mat-tab-group mat-align-tabs="start">
         <mat-tab label="Description"> {{recipe.description}} </mat-tab>
         <mat-tab label="Instruction"> {{recipe.instruction}} </mat-tab>
-        <mat-tab label="Video"> Content 3 </mat-tab>
+        <mat-tab label="Video"> 
+            <youtube-player 
+                videoId="{{recipe.videoLink}}" 
+                suggestedQuality="highres" 
+                [height]="250" 
+                [width]="500" >
+            </youtube-player>
+        </mat-tab>
         <mat-tab label="Comments">
             <mat-card class="mat-elevation-z0 outline" *ngFor="let review of reviews;">
                 <mat-card-header>
