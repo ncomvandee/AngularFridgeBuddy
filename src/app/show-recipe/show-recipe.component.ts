@@ -20,12 +20,13 @@ export class ShowRecipeComponent implements OnInit {
 
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id']; // (+) converts string 'id' to a number
-   });
+    });
 
     this.recipeApiService.getRecipeById(this.id).subscribe((result: any) =>
     {
         this.recipe = result;
     });
+
     this.recipeApiService.getReviewsForRecipe(this.id).subscribe((result: any) =>
     {
         this.reviews = result;
