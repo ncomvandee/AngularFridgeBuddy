@@ -29,18 +29,20 @@
             <div>
                 <ul class="list-group">
                      <li *ngFor="let result of resultArray" class="list-group-item">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="{{result.recipeImage}}" alt="" class="img-thumbnail"/>
-                            </div>
-                            <div class="col-md-9">
-                                <div class="result-text">
-                                    <p>{{result.recipeName}}</p>
-                                    <p>Rating: <i *ngFor="let rate of [].constructor(result.avgRate)" id="star-icon" class="fas fa-star"></i></p>
-                                    <p class="missing-ingredient">3 ingredients missing</p>
+                        <a [routerLink]="['/showRecipe', result.recipeId]">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <img src="{{result.recipeImage}}" alt="" class="img-thumbnail"/>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="result-text">
+                                        <p>{{result.recipeName}}</p>
+                                        <p>Rating: <i *ngFor="let rate of [].constructor(result.avgRate)" id="star-icon" class="fas fa-star"></i></p>
+                                        <p class="missing-ingredient">3 ingredients missing</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </li>
 
                 </ul>

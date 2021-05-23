@@ -43,7 +43,7 @@
                         <li *ngFor="let ingredient of recipe.ingredientList">{{ingredient}}</li>
                     </ul>
                 </mat-tab>
-                <mat-tab label="Instruction">
+                <mat-tab label="Instructions">
                     <p *ngFor="let recipe of recipe.instruction; let i = index">
                         <b>Step {{i +1}}</b>: {{recipe}}
                     </p> 
