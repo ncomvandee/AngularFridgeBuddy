@@ -18,7 +18,7 @@ export class AppComponent  {
 
   constructor(public router : Router) {
      this.DisplayLogIn = false;
-    //  this.DisplayLogout = false;
+     this.DisplayLogout = false;
   }
 
   GetuserNameVal(name:string) {
