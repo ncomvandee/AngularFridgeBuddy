@@ -11,12 +11,14 @@ export class AppComponent  {
  
   title = 'FridgeBuddy';
   DisplayLogIn:boolean = true;
+  DisplayLogout:boolean = true;
   alreadyLoggedIn:boolean = false;
   currentUser:string = "Login / Sign Up";
 
 
   constructor(public router : Router) {
      this.DisplayLogIn = false;
+    //  this.DisplayLogout = false;
   }
 
   GetuserNameVal(name:string) {
@@ -26,13 +28,27 @@ export class AppComponent  {
     this.DisplayLogIn = false;
   }
 
+  logMeOut(user:string){
+    this.currentUser = user;
+    if(this.currentUser != "Login / Sign Up")
+    {
+      this.DisplayLogout = true;
+    }
+    else{
+      this.DisplayLogout = false;
+      this.router.navigate(['/home']);
+    }
+  }
+
   ChangeLoginStats() {
     if(this.currentUser != "Login / Sign Up") {
       this.DisplayLogIn = false;
       this.alreadyLoggedIn = true;
+      this.DisplayLogout = true;
       this.router.navigate(['/account']);
     } else {
        this.DisplayLogIn = true;
+       this.DisplayLogout = false;
     }
   }
 
@@ -42,6 +58,7 @@ export class AppComponent  {
     } else {
       this.alreadyLoggedIn = false;
     }
+    this.DisplayLogout = false;
   }
   
   ChangeIngeredientStats() {
@@ -50,6 +67,7 @@ export class AppComponent  {
     } else {
       this.alreadyLoggedIn = false;
     }
+    this.DisplayLogout = false;
   }
 
   ChangeHomePageStats() {
@@ -59,6 +77,8 @@ export class AppComponent  {
     } else {
       this.alreadyLoggedIn = false;
     }
+    this.DisplayLogout = false;
+
   }
  
 }

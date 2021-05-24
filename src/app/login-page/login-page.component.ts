@@ -17,9 +17,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   @Input() show:boolean = true;
   @Output() outToParent = new EventEmitter<string>();
 
-  constructor(readonly element: ElementRef<HTMLElement>) {
-    // this.element.nativeElement.remove();
-  }
+  constructor() {}
 
   addNewUser(userService: UserApiService) { 
     userService.addUser(this.body).subscribe((result: any) =>

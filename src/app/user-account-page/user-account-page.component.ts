@@ -1,3 +1,4 @@
+import { Output, EventEmitter, Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserAccountPageComponent implements OnInit {
 
+  @Output() outToParent = new EventEmitter<string>();
+  @Input() user:string;
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  logMeOut(){
+    this.outToParent.emit("Login / Sign Up");
   }
 
 }
