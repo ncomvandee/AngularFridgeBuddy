@@ -1,6 +1,4 @@
-import { Component, Directive, Input,Output, EventEmitter, OnChanges, OnDestroy, OnInit, SimpleChange, ElementRef } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import { Location } from '@angular/common';
+import { Component, Input,Output, EventEmitter } from '@angular/core';
 import { UserApiService } from '../user-api.service';
 
 @Component({
@@ -10,11 +8,10 @@ import { UserApiService } from '../user-api.service';
 })
 
 
-export class LoginPageComponent implements OnInit, OnDestroy { 
+export class LoginPageComponent  { 
   body:any;
   
   @Input() user:string;
-  @Input() show:boolean = true;
   @Output() outToParent = new EventEmitter<string>();
 
   constructor() {}
@@ -28,19 +25,6 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
   sendUserInputs(username, password){
     this.outToParent.emit(username);
-  }
-
-  ngOnChanges(changes: SimpleChange){
-      for (const propName in changes){
-        const chng = changes[propName];
-        const cur = JSON.stringify(chng.currentValue);
-        const prev = JSON.stringify(chng.previousValue);
-      }
-  }
-  ngOnInit(): void {
-  }
-
-  ngOnDestroy(){
   }
 
 }
