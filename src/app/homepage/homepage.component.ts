@@ -9,11 +9,20 @@ import {RecipeApiService} from '../recipe-api-service'
 })
 export class HomepageComponent implements OnInit {
   recipes : any;
-  constructor(recipeService: RecipeApiService) { 
-    recipeService.getRecipes().subscribe((result: any) =>
-    {
-        this.recipes = result;
-    });
+  selected: any;
+  recipeService: RecipeApiService;
+  constructor(recipeService: RecipeApiService) {
+    
+    this.selected = 'Rating'
+    this.recipeService = recipeService;
+
+    this.onSelect();
+  }
+
+  onSelect() {
+    this.recipeService.getTopTenRecipe(this.selected).subscribe((result: any) => {
+      this.recipes = result;
+    })
   }
 
   ngOnInit(): void {

@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { UserAccountPageComponent } from './user-account-page/user-account-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -39,6 +40,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatTabsModule,
     MatInputModule,
     MatCardModule,
+    MatSelectModule,
     YouTubePlayerModule,
     NgbModule
   ],

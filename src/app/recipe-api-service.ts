@@ -36,5 +36,9 @@ export class RecipeApiService{
   getReviewsForRecipe(recipeId: string) {
     return this.http.get(this.url + '/getReviewList/' + recipeId);
   }
+
+  getTopTenRecipe(filter: string) {
+    return this.http.get(this.url + '/topTenBy' + filter);
+  }
   
 }

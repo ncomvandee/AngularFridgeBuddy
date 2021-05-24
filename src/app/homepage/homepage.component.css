@@ -2,3 +2,11 @@
     color: gold;
     margin-left: 2px;;
 }
+
+h4 {
+    font-size: large;
+}
+
+img {
+    object-fit: cover;
+}

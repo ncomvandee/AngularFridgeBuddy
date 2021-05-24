@@ -1,16 +1,25 @@
+
 <br />
-		<h2><b>Top 10</b></h2>
+		<h1><b>Top 10</b></h1>
 <br />
 
-<div class="dropdown">
+<!-- <div class="dropdown">
     <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       By Popularity
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" href="#">By Rating</a>
-      <a class="dropdown-item" href="#">By Date</a>
+      <a class="dropdown-item" href="#">By Views</a>
     </div>
-</div>
+</div> -->
+
+<mat-form-field appearance="fill">
+  <mat-label>by</mat-label>
+  <mat-select (selectionChange)="onSelect()" [(value)]="selected">
+    <mat-option value="Rating">Rating</mat-option>
+    <mat-option value="Views">Views</mat-option>
+  </mat-select>
+</mat-form-field>
 
 <br />
 <br />		  
@@ -22,7 +31,10 @@
             <div class="card-body">
                 <h4 class="card-title">Name: {{recipe.recipeName}}</h4>
                 <h4 class="rating card-text">Rating:</h4>
-                    <span *ngFor="let rate of [].constructor(recipe.avgRate)" class="fa fa-star"></span>
+                <span *ngFor="let rate of [].constructor(recipe.avgRate)" class="fa fa-star"></span>
+                <h4>Views: {{recipe.viewers}}</h4>
+
+
                 <div class="col-md-12 text-center">
                     <a [routerLink]="['/showRecipe', recipe.recipeId]" class="btn btn-primary btn-lg">View</a>
                 </div>
