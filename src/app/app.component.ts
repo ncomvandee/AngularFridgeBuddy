@@ -1,4 +1,3 @@
-import { ElementRef, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -12,9 +11,7 @@ export class AppComponent  {
   title = 'FridgeBuddy';
   DisplayLogIn:boolean = true;
   DisplayLogout:boolean = true;
-  alreadyLoggedIn:boolean = false;
   currentUser:string = "Login / Sign Up";
-
 
   constructor(public router : Router) {
      this.DisplayLogIn = false;
@@ -43,7 +40,6 @@ export class AppComponent  {
   ChangeLoginStats() {
     if(this.currentUser != "Login / Sign Up") {
       this.DisplayLogIn = false;
-      this.alreadyLoggedIn = true;
       this.DisplayLogout = true;
       this.router.navigate(['/account']);
     } else {
@@ -55,27 +51,20 @@ export class AppComponent  {
   ChangeCusinStats() {
     if(this.currentUser == "Login / Sign Up") {
       this.DisplayLogIn = false;
-    } else {
-      this.alreadyLoggedIn = false;
-    }
+    } 
     this.DisplayLogout = false;
   }
   
   ChangeIngeredientStats() {
     if(this.currentUser == "Login / Sign Up") {
       this.DisplayLogIn = false;
-    } else {
-      this.alreadyLoggedIn = false;
-    }
+    } 
     this.DisplayLogout = false;
   }
 
   ChangeHomePageStats() {
-    this.alreadyLoggedIn = false;
     if(this.currentUser == "Login / Sign Up") {
       this.DisplayLogIn = false;
-    } else {
-      this.alreadyLoggedIn = false;
     }
     this.DisplayLogout = false;
 
