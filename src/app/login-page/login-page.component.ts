@@ -1,5 +1,6 @@
 import { Component, Input,Output, EventEmitter, OnInit } from '@angular/core';
 import { UserApiService } from '../user-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -15,10 +16,12 @@ export class LoginPageComponent implements OnInit  {
   @Output() outToParent = new EventEmitter<string>();
   allUsers:any;
   userService: UserApiService
+  Router: any;
 
-  constructor(userService: UserApiService) {
+  constructor(userService: UserApiService, Router: Router) {
     this.userService = userService;
     this.onSelect();
+    this.Router = Router;
   }
 
   ngOnInit(): void {
@@ -57,6 +60,7 @@ export class LoginPageComponent implements OnInit  {
 
     if(isValidUser){
       this.outToParent.emit(username);
+      this.Router.navigate(['/home']);
     }
   }
 
