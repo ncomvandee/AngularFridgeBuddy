@@ -1,4 +1,4 @@
-import { Component, Input,Output, EventEmitter } from '@angular/core';
+import { Component, Input,Output, EventEmitter, OnInit } from '@angular/core';
 import { UserApiService } from '../user-api.service';
 
 @Component({
@@ -8,23 +8,56 @@ import { UserApiService } from '../user-api.service';
 })
 
 
-export class LoginPageComponent  { 
+export class LoginPageComponent implements OnInit  { 
   body:any;
   
   @Input() user:string;
   @Output() outToParent = new EventEmitter<string>();
+  allUsers:any;
+  userService: UserApiService
 
-  constructor() {}
+  constructor(userService: UserApiService) {
+    this.userService = userService;
+    this.onSelect();
+  }
 
-  addNewUser(userService: UserApiService) { 
-    userService.addUser(this.body).subscribe((result: any) =>
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  onSelect(){
+    this.userService.getAllUsers().subscribe((result: any) =>
+    {
+      this.allUsers = result;
+    });
+    
+
+  }
+
+  addNewUser() { 
+
+    this.userService.addUser(this.body).subscribe((result: any) =>
     {
       console.log(result);
     });
   }
 
   sendUserInputs(username, password){
-    this.outToParent.emit(username);
+
+    let isValidUser: boolean = false;
+    for (var i = 0; i < this.allUsers.length; i++)
+      {
+        console.warn(this.allUsers[i].userId);
+        if(this.allUsers[i].userId == username &&
+           this.allUsers[i].password == password ){
+           isValidUser = true;
+           break;
+        }
+      }
+
+    if(isValidUser){
+      this.outToParent.emit(username);
+    }
   }
 
 }

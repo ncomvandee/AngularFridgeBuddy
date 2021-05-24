@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http"
   providedIn: 'root'
 })
 export class UserApiService {
-  url = "http:/localhost:4000/users";
+  url = "http://localhost:4000/users";
   body:any;
 
   constructor(private http: HttpClient){}
@@ -14,7 +14,11 @@ export class UserApiService {
   addUser(body:any) {
     console.warn(body);
     return this.http.post(this.url, body);
-}
+  }
+
+  getAllUsers() {
+    return this.http.get(this.url);
+  } 
   
 }
 
