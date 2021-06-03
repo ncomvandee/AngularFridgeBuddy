@@ -5,13 +5,13 @@ import { HttpClient } from "@angular/common/http"
   providedIn: 'root'
 })
 export class RecipeApiService{
-  url = "http://localhost:4000/recipes";
-
+  hostUrl:string = 'https://fridgebuddy555.azurewebsites.net';
+  path:string = '/recipes';
 
   constructor(private http: HttpClient){}
 
   getRecipes() {
-      return this.http.get(this.url);
+      return this.http.get(this.hostUrl + this.path);
   }
 
   searchByIngredients(ingredientsArray: Set<string>) {
@@ -22,23 +22,23 @@ export class RecipeApiService{
       query += temp;
     }
 
-    return this.http.get(this.url + '/byIngredients?' + query );
+    return this.http.get(this.hostUrl + this.path + '/byIngredients?' + query);
   }
 
   searchByCuisine(cuisine: string) {
-    return this.http.get(this.url + '/byCuisine/' + cuisine);
+    return this.http.get(this.hostUrl + this.path + '/byCuisine/' + cuisine);
   }
 
   getRecipeById(recipeId: string) {
-    return this.http.get(this.url + '/find/' + recipeId);
+    return this.http.get(this.hostUrl + this.path + '/find/' + recipeId);
   }
 
   getReviewsForRecipe(recipeId: string) {
-    return this.http.get(this.url + '/getReviewList/' + recipeId);
+    return this.http.get(this.hostUrl + this.path + '/getReviewList/' + recipeId);
   }
 
   getTopTenRecipe(filter: string) {
-    return this.http.get(this.url + '/topTenBy' + filter);
+    return this.http.get(this.hostUrl + this.path + '/topTenBy' + filter);
   }
   
 }
