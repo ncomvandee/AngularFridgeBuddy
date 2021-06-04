@@ -33,12 +33,9 @@ export class LoginPageComponent implements OnInit  {
     {
       this.allUsers = result;
     });
-    
-
   }
 
   addNewUser() { 
-
     this.userService.addUser(this.body).subscribe((result: any) =>
     {
       console.log(result);
@@ -46,7 +43,6 @@ export class LoginPageComponent implements OnInit  {
   }
 
   sendUserInputs(username, password){
-
     let isValidUser: boolean = false;
     for (var i = 0; i < this.allUsers.length; i++)
       {
