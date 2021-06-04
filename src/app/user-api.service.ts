@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http"
   providedIn: 'root'
 })
 export class UserApiService {
-  hostUrl:string = 'https://fridgebuddy555.azurewebsites.net';
+  hostUrl:string = 'http://fridgebuddy555.azurewebsites.net';
   path:string = '/users';
   body:any;
 
