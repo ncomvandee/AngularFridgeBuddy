@@ -10,8 +10,8 @@ import { UserApiService } from './user-api.service';
 export class AppComponent  {
  
   title = 'FridgeBuddy';
-  isLoggedIn:boolean = false; 
-  currentUser:string;
+  isLoggedIn: boolean = false; 
+  currentUser: any;
 
   constructor(public router : Router, private auth: UserApiService) {
     console.log("app.component.ts: " + this.isLoggedIn); 
@@ -20,8 +20,8 @@ export class AppComponent  {
       console.log("Inside here " + this.isLoggedIn);
       if(this.isLoggedIn){
         this.auth.getUserProfile().subscribe(data => {
-          this.currentUser = JSON.stringify(data).replace(/"/g,"");
-          this.currentUser = 'Hi, '+ this.currentUser;
+          this.currentUser = JSON.parse(JSON.stringify(data));
+          this.currentUser = 'Hi, '+ this.currentUser.displayName;
         })
       } else {
         this.currentUser = "Login";
