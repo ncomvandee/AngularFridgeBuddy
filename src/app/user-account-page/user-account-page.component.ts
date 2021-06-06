@@ -1,5 +1,7 @@
 import { Output, EventEmitter, Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserApiService } from '../user-api.service';
 
 @Component({
   selector: 'app-user-account-page',
@@ -8,16 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserAccountPageComponent implements OnInit {
 
-  @Output() outToParent = new EventEmitter<string>();
-  @Input() user:string;
+  public userApiService: UserApiService;
+  // @Output() outToParent = new EventEmitter<string>();
+  // @Input() loginStatus: string;
   
-  constructor() { }
+  constructor(public router : Router, private auth: UserApiService) { 
+    this.userApiService = auth;
+  }
 
   ngOnInit(): void {
   }
 
   logMeOut(){
-    this.outToParent.emit("Login / Sign Up");
+     this.userApiService.logout().subscribe(async res =>  {
+      console.log('Successfully logged out');
+      // this.outToParent.emit("false");
+      // this.loginStatus = "false";
+      await this.router.navigate(['/home']);
+      location.reload();
+    });
   }
 
 }

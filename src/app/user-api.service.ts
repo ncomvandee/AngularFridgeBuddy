@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
+import { Observable, BehaviorSubject } from  'rxjs';
 
 
 @Injectable({
@@ -19,9 +20,17 @@ export class UserApiService {
   getAllUsers() {
     return this.http.get(this.path);
   } 
+
+  getUserProfile() {
+    return this.http.get(this.path + "/auth/user");
+  }
+
+  getStatus(): Observable<string>  {
+    return this.http.get<string>(this.path + "/loggedIn");
+  } 
+
+  logout() {
+    return this.http.get(this.path + "/logout");
+  }
   
 }
-
-
-
-
