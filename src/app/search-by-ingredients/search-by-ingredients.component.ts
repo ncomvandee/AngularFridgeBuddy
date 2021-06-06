@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { IngredientApiService } from '../ingredient-api.service';
 import { RecipeApiService} from '../recipe-api-service';
 
 @Component({
@@ -13,12 +14,27 @@ export class SearchByIngredientsComponent implements OnInit {
   public selectedIngredients: Set<string>;
   public resultArray: any;
   public recipeApiService: RecipeApiService;
+  public ingredientApiService: IngredientApiService;
 
-  constructor(service: RecipeApiService) {
-    this.ingredientsArray = ['Egg','Broccoli', 'Beef', 'Salmon'];
+  constructor(Recipeservice: RecipeApiService, IngredientService: IngredientApiService) {
+    this.ingredientsArray = [];
     this.selectedIngredients = new Set;
     this.resultArray = [];
-    this.recipeApiService = service;
+    this.recipeApiService = Recipeservice;
+    this.ingredientApiService = IngredientService
+
+    this.getIngredient();
+   }
+
+   getIngredient() {
+     this.ingredientApiService.getIngredients().subscribe((result:any) => {
+
+      for (let ingredient of result[0].ingredientName) {
+        this.ingredientsArray.push(ingredient);
+      }
+      
+     })
+
    }
 
    onSelectIngredient(ingredient: any) {
