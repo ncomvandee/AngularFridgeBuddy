@@ -42,23 +42,5 @@ export class LoginPageComponent implements OnInit  {
   //   });
   // }
 
-  // sendUserInputs(username, password){
-  //   let isValidUser: boolean = false;
-  //   for (var i = 0; i < this.allUsers.length; i++)
-  //     {
-  //       if(this.allUsers[i].userId == username &&
-  //          this.allUsers[i].password == password ){
-  //          isValidUser = true;
-  //          break;
-  //       }
-  //     }
-
-  //   if(isValidUser){
-  //     // this.user = username;
-  //     console.warn('login-page: ' + username);
-  //     this.outToParent.emit(username);
-  //     this.Router.navigate(['/home']);
-  //   }
-  // }
 
 }
