@@ -32,5 +32,10 @@ export class UserApiService {
   logout() {
     return this.http.get(this.path + "/logout");
   }
+
+  getSingleUser(ssoId:string) {
+    console.log("the sso id after being passed is: " + ssoId);
+    return this.http.get(this.path + "/ssoId/" + ssoId);
+  }
   
 }
