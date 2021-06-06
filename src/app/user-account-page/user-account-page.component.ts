@@ -13,9 +13,13 @@ export class UserAccountPageComponent implements OnInit {
   public userApiService: UserApiService;
   // @Output() outToParent = new EventEmitter<string>();
   // @Input() loginStatus: string;
-  
+  currentUser:string;
+
   constructor(public router : Router, private auth: UserApiService) { 
     this.userApiService = auth;
+    this.auth.getUserProfile().subscribe(data => {
+      this.currentUser = JSON.stringify(data).replace(/"/g,"");
+    })
   }
 
   ngOnInit(): void {
