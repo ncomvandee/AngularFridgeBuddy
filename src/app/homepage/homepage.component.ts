@@ -1,12 +1,12 @@
-import { Component} from '@angular/core';
-import {RecipeApiService} from '../recipe-api-service'
-
+import { Component } from '@angular/core';
+import { RecipeApiService } from '../recipe-api-service'
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
+
 export class HomepageComponent {
   recipes : any;
   selected: any;
@@ -24,5 +24,4 @@ export class HomepageComponent {
       this.recipes = result;
     })
   }
-
 }
