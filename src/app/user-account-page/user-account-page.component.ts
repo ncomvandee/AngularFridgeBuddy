@@ -13,8 +13,7 @@ export class UserAccountPageComponent implements OnInit {
 
   public userApiService: UserApiService;
   public recipeApiService: RecipeApiService;
-  // @Output() outToParent = new EventEmitter<string>();
-  // @Input() loginStatus: string;
+  
   currentUser: any;
   name:string;
   email:string;
@@ -33,7 +32,6 @@ export class UserAccountPageComponent implements OnInit {
       this.email = this.currentUser.email;
       this.ssoId = this.currentUser.userId;
       this.populateFavoriteList();
-      // this.getFavoriteRecipes();
     });
   }
 
@@ -45,46 +43,19 @@ export class UserAccountPageComponent implements OnInit {
     this.auth.getSingleUser(this.ssoId).subscribe(async data => {
       userInfo = await JSON.parse(JSON.stringify(data));
       this.favoritelist = userInfo.favoriteList;
-      // console.warn("The favorite list contains: " + this.favoritelist);
       let recipe:any;
-      // console.warn("Made it into the get Favorite Recipe!");
-      // console.warn("The favorite list is: " + this.favoritelist);
-      // console.warn("The favorite list is of type: " + typeof(this.favoritelist));
       for(let recipeId of this.favoritelist) {
-        // console.warn("Made it into the for loop");
-        // console.warn("The recipeid is: " + recipeId);
         this.recipeApiService.getRecipeById(recipeId).subscribe(async data => {
           recipe = await JSON.parse(JSON.stringify(data));
           this.listOfFavoritesAsRecipes.push(recipe);
-          // console.warn(recipe);
-          // console.warn(this.listOfFavoritesAsRecipes);
         });
       }
     });
   }
 
-  // getFavoriteRecipes() {
-  //   let recipe:any;
-  //   console.warn("Made it into the get Favorite Recipe!");
-  //   console.warn("The favorite list is: " + this.favoritelist);
-  //   console.warn("The favorite list is of type: " + typeof(this.favoritelist));
-  //   for(let recipeId of this.favoritelist) {
-  //     console.warn("Made it into the for loop");
-  //     console.warn("The recipeid is: " + recipeId);
-  //     this.recipeApiService.getRecipeById(recipeId).subscribe(async data => {
-  //       recipe = await JSON.parse(JSON.stringify(data));
-  //       this.listOfFavoritesAsRecipes.push(recipe);
-  //       console.warn(recipe);
-  //       console.warn(this.listOfFavoritesAsRecipes);
-  //     });
-  //   }
-  // }
-
   logMeOut(){
      this.userApiService.logout().subscribe(async res =>  {
       console.log('Successfully logged out');
-      // this.outToParent.emit("false");
-      // this.loginStatus = "false";
       await this.router.navigate(['/home']);
       location.reload();
     });
