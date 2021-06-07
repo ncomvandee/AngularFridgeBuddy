@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ReviewApiService } from '../review-api.service';
 import { Router } from '@angular/router';
 import { UUID } from 'angular2-uuid';
+import { UserApiService } from '../user-api.service';
 
 @Component({
   selector: 'app-show-recipe',
@@ -19,9 +20,12 @@ export class ShowRecipeComponent implements OnInit {
   id: string;
   private sub: any;
 
+  ssoId: any;
+  currentUser: any;
+
   starRating = 0;
 
-  constructor(service: RecipeApiService, private route: ActivatedRoute, reviewService: ReviewApiService, public router : Router) { 
+  constructor(service: RecipeApiService, private route: ActivatedRoute, reviewService: ReviewApiService, public router : Router, private auth: UserApiService) { 
     this.recipeApiService = service;
     this.reviewApiService = reviewService;
 
@@ -38,6 +42,11 @@ export class ShowRecipeComponent implements OnInit {
     {
         this.reviews = result;
     });
+
+    this.auth.getUserProfile().subscribe(async data => {
+      this.currentUser = await JSON.parse(JSON.stringify(data));
+      this.ssoId = this.currentUser.userId;
+    });
   }
 
   ngOnInit(): void {
@@ -47,7 +56,7 @@ export class ShowRecipeComponent implements OnInit {
     const body = {
       "reviewId": UUID.UUID(),
       "comment": userComment,
-      "writer": "abc",
+      "writer": this.ssoId,
       "date": new Date().toLocaleDateString(),
       "rate": starRating
     }
