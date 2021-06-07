@@ -15,7 +15,6 @@ export class LoginPageComponent implements OnInit  {
 
   constructor(userService: UserApiService, Router: Router) {
     this.userService = userService;
-    // this.onSelect();
     this.Router = Router;
   }
 
