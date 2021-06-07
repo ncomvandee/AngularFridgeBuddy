@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RecipeApiService} from '../recipe-api-service';
 
 @Component({
@@ -6,8 +6,8 @@ import { RecipeApiService} from '../recipe-api-service';
   templateUrl: './search-by-cuisine.component.html',
   styleUrls: ['./search-by-cuisine.component.css']
 })
-export class SearchByCuisineComponent implements OnInit {
 
+export class SearchByCuisineComponent {
   public recipeApiService: RecipeApiService;
   public result: any;
   foundCuisine: boolean;
@@ -18,9 +18,6 @@ export class SearchByCuisineComponent implements OnInit {
     this.foundCuisine = false;
   }
 
-  ngOnInit(): void {
-  }
-
   searchRecipe(cuisine){
     if (cuisine.length) {
       this.recipeApiService.searchByCuisine(cuisine).subscribe((result: any) => {
@@ -28,11 +25,9 @@ export class SearchByCuisineComponent implements OnInit {
         this.foundCuisine = true;
         console.warn(result);
       })
-    }
-    else {
+    } else {
       this.foundCuisine = false;
       this.result = null;
     }
   }
-
 }
