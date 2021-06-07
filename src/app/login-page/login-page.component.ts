@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-export class LoginPageComponent implements OnInit  { 
+export class LoginPageComponent { 
   body:any;
   allUsers:any;
   userService: UserApiService
@@ -16,9 +16,5 @@ export class LoginPageComponent implements OnInit  {
   constructor(userService: UserApiService, Router: Router) {
     this.userService = userService;
     this.Router = Router;
-  }
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 }
