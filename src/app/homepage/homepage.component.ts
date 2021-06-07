@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component} from '@angular/core';
 import {RecipeApiService} from '../recipe-api-service'
 
 
@@ -7,12 +7,12 @@ import {RecipeApiService} from '../recipe-api-service'
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent implements OnInit {
+export class HomepageComponent {
   recipes : any;
   selected: any;
   recipeService: RecipeApiService;
+
   constructor(recipeService: RecipeApiService) {
-    
     this.selected = 'Rating'
     this.recipeService = recipeService;
 
@@ -23,9 +23,6 @@ export class HomepageComponent implements OnInit {
     this.recipeService.getTopTenRecipe(this.selected).subscribe((result: any) => {
       this.recipes = result;
     })
-  }
-
-  ngOnInit(): void {
   }
 
 }
