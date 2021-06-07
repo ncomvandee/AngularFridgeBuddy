@@ -23,12 +23,12 @@
                 <mat-card-content>
                     <mat-form-field class="example-full-width">
                         <mat-label>Leave a comment</mat-label>
-                        <textarea matInput placeholder="Ex. I love this recipe"></textarea>
+                        <textarea #userComment matInput placeholder="Ex. I love this recipe"></textarea>
                     </mat-form-field>
                     <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button mat-raised-button color="primary">Submit</button>
+                    <button mat-raised-button color="primary" (click)="sendReview(userComment.value, starRating)">Submit</button>
                 </mat-card-actions>
             </mat-card>
         </div> 
