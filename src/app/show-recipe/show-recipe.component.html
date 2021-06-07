@@ -15,7 +15,7 @@
                 <img mat-card-image src={{recipe.recipeImage}} alt="Photo of the recipe">
             </mat-card>
             <br><br><br>
-            <mat-card class="example-card">
+            <mat-card *ngIf="ssoId" class="example-card">
                 <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
                 <mat-card-title>Leave a Comment and a Rating</mat-card-title>
