@@ -3,6 +3,9 @@
 
 }
 
+.card {
+    overflow-y: auto;
+}
 .card-body{
     height: 20em;
 }
