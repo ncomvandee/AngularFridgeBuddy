@@ -11,7 +11,6 @@ import { UserApiService } from '../user-api.service';
   templateUrl: './show-recipe.component.html',
   styleUrls: ['./show-recipe.component.css']
 })
-
 export class ShowRecipeComponent {
   public recipeApiService: RecipeApiService;
   public reviewApiService: ReviewApiService;
@@ -19,10 +18,10 @@ export class ShowRecipeComponent {
   public reviews: any;
 
   private sub: any;
-  public id: string;
-  public ssoId: any;
-  public currentUser: any;
-  public starRating = 0;
+  id: string;
+  ssoId: any;
+  currentUser: any;
+  starRating = 0;
 
   constructor(service: RecipeApiService, private route: ActivatedRoute, reviewService: ReviewApiService, public router : Router, private auth: UserApiService) { 
     this.recipeApiService = service;

@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
-
 export class LoginPageComponent implements OnInit  { 
   body:any;
   allUsers:any;

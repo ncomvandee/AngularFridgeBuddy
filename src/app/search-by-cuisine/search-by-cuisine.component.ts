@@ -6,7 +6,6 @@ import { RecipeApiService} from '../recipe-api-service';
   templateUrl: './search-by-cuisine.component.html',
   styleUrls: ['./search-by-cuisine.component.css']
 })
-
 export class SearchByCuisineComponent {
   public recipeApiService: RecipeApiService;
   public result: any;

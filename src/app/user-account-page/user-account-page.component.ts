@@ -1,4 +1,3 @@
-import { Output, EventEmitter, Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RecipeApiService } from '../recipe-api-service';
@@ -9,8 +8,7 @@ import { UserApiService } from '../user-api.service';
   templateUrl: './user-account-page.component.html',
   styleUrls: ['./user-account-page.component.css']
 })
-export class UserAccountPageComponent implements OnInit {
-
+export class UserAccountPageComponent {
   public userApiService: UserApiService;
   public recipeApiService: RecipeApiService;
   
@@ -35,9 +33,6 @@ export class UserAccountPageComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
-
   populateFavoriteList() {
     let userInfo:any;
     this.auth.getSingleUser(this.ssoId).subscribe(async data => {
@@ -60,5 +55,4 @@ export class UserAccountPageComponent implements OnInit {
       location.reload();
     });
   }
-
 }

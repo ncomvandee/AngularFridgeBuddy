@@ -6,7 +6,6 @@ import { RecipeApiService } from '../recipe-api-service'
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-
 export class HomepageComponent {
   recipes : any;
   selected: any;

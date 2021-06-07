@@ -8,7 +8,6 @@ import { RecipeApiService} from '../recipe-api-service';
   styleUrls: ['./search-by-ingredients.component.css']
 })
 export class SearchByIngredientsComponent {
-
   public ingredientsArray: Array<string>;
   public selectedIngredients: Set<string>;
   public resultArray: any;
