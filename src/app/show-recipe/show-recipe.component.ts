@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {RecipeApiService} from '../recipe-api-service'
 import { ActivatedRoute } from '@angular/router';
 import { ReviewApiService } from '../review-api.service';
@@ -11,19 +11,18 @@ import { UserApiService } from '../user-api.service';
   templateUrl: './show-recipe.component.html',
   styleUrls: ['./show-recipe.component.css']
 })
-export class ShowRecipeComponent implements OnInit {
+
+export class ShowRecipeComponent {
   public recipeApiService: RecipeApiService;
   public reviewApiService: ReviewApiService;
   public recipe: any;
   public reviews: any;
 
-  id: string;
   private sub: any;
-
-  ssoId: any;
-  currentUser: any;
-
-  starRating = 0;
+  public id: string;
+  public ssoId: any;
+  public currentUser: any;
+  public starRating = 0;
 
   constructor(service: RecipeApiService, private route: ActivatedRoute, reviewService: ReviewApiService, public router : Router, private auth: UserApiService) { 
     this.recipeApiService = service;
@@ -49,9 +48,6 @@ export class ShowRecipeComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
-
   sendReview(userComment:string, starRating:any) {
     const body = {
       "reviewId": UUID.UUID(),
@@ -60,6 +56,7 @@ export class ShowRecipeComponent implements OnInit {
       "date": new Date().toLocaleDateString(),
       "rate": starRating
     }
+
     this.reviewApiService.postReview(body, this.id).subscribe(async res =>
     {
       console.log('Successfully posted');
@@ -67,5 +64,4 @@ export class ShowRecipeComponent implements OnInit {
       location.reload();
     });
   }
-
 }
