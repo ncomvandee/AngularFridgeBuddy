@@ -8,7 +8,6 @@ import { UserApiService } from './user-api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  {
- 
   title = 'FridgeBuddy';
   isLoggedIn: boolean = false; 
   currentUser: any;
@@ -30,36 +29,8 @@ export class AppComponent  {
     })
   }
 
-  // logoutUser(status: string) {
-  //   this.isLoggedIn = (/true/i).test(status);
-  // }
-
-  // GetuserNameVal(name: string) {
-  //   this.currentUser = "Hi "+ name + "!";
-  // }
-
-  // GetuserNameVal(name:string) {
-  //   if(name) {
-  //     this.currentUser = "Hi "+ name + "!";
-  //   }
-  //   this.DisplayLogIn = false;
-  // }
-
-  // logMeOut(user:string){
-  //   this.currentUser = user;
-  //   if(this.currentUser != "Login / Sign Up")
-  //   {
-  //     this.DisplayLogout = true;
-  //   }
-  //   else{
-  //     this.DisplayLogout = false;
-  //     this.router.navigate(['/home']);
-  //   }
-  // }
-
   ChangeLoginStats() {
     if(this.currentUser != "Login / Sign Up") {
-      // name:string = 
       this.router.navigate(['/account']);
     } else {
        this.currentUser = "Login / Sign Up";
@@ -67,26 +38,4 @@ export class AppComponent  {
     }
   }
 
-  // ChangeCusinStats() {
-  //   if(this.currentUser == "Login / Sign Up") {
-  //     // this.DisplayLogIn = false;
-  //   } 
-  //   // this.DisplayLogout = false;
-  // }
-  
-  // ChangeIngeredientStats() {
-  //   if(this.currentUser == "Login / Sign Up") {
-  //     // this.DisplayLogIn = false;
-  //   } 
-  //   // this.DisplayLogout = false;
-  // }
-
-  // ChangeHomePageStats() {
-  //   if(this.currentUser == "Login / Sign Up") {
-  //     // this.DisplayLogIn = false;
-  //   }
-  //   // this.DisplayLogout = false;
-
-  // }
- 
 }

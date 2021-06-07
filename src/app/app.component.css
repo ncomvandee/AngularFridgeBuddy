@@ -1,32 +1,31 @@
+.container{
+    position: relative;
+    z-index: 1;
+}
 
-    .container{
+.loginForm{
         position: relative;
-        z-index: 1;
-    }
-    
-    .loginForm{
-            position: relative;
-            margin: -285px 0;
-            z-index: 3;
-            background-color: white;
-            background-size:100% 100%;
-            opacity:   100; 
-           
-    }
+        margin: -285px 0;
+        z-index: 3;
+        background-color: white;
+        background-size:100% 100%;
+        opacity:   100; 
+        
+}
 
-    .notification{
-        position:relative;
-        max-width: fit-content;
-        font-size: 25px;
-        margin-left: 230px;
-        color: red;
-    }
+.notification{
+    position:relative;
+    max-width: fit-content;
+    font-size: 25px;
+    margin-left: 230px;
+    color: red;
+}
 
-    .logoutForm{
-         position: relative;
-            margin: -350px 0;
-            z-index: 100;
-            background-color: white;
-            background-size:100% 100%;
-            opacity:   100; 
-    }
+.logoutForm{
+        position: relative;
+        margin: -350px 0;
+        z-index: 100;
+        background-color: white;
+        background-size:100% 100%;
+        opacity:   100; 
+}

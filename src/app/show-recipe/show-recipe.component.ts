@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {RecipeApiService} from '../recipe-api-service'
+import { RecipeApiService } from '../recipe-api-service'
 import { ActivatedRoute } from '@angular/router';
 import { ReviewApiService } from '../review-api.service';
 import { Router } from '@angular/router';
