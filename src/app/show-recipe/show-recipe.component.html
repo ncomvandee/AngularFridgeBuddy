@@ -3,8 +3,8 @@
 <div class="row">
     <div class="col-auto">
         <h2 class="pull-left">{{recipe.recipeName}}</h2>
-        <button mat-icon-button disabled class="pull-right">
-            <mat-icon>favorite</mat-icon>
+        <button mat-icon-button class="pull-right" (click)="addToFavorite()">
+            <mat-icon [ngClass]="{'gray': !toggle, 'red': toggle}">favorite</mat-icon>
         </button>
     </div>
 </div>

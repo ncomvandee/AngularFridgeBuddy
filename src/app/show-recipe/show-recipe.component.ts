@@ -16,6 +16,7 @@ export class ShowRecipeComponent {
   public reviewApiService: ReviewApiService;
   public recipe: any;
   public reviews: any;
+  public toggle: boolean;
 
   private sub: any;
   id: string;
@@ -26,6 +27,7 @@ export class ShowRecipeComponent {
   constructor(service: RecipeApiService, private route: ActivatedRoute, reviewService: ReviewApiService, public router : Router, private auth: UserApiService) { 
     this.recipeApiService = service;
     this.reviewApiService = reviewService;
+    this.toggle = false;
 
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
@@ -62,5 +64,9 @@ export class ShowRecipeComponent {
       await this.router.navigate(['/showRecipe/' + this.id]);
       location.reload();
     });
+  }
+
+  addToFavorite() {
+    this.toggle = !this.toggle;
   }
 }
