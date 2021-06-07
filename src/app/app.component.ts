@@ -28,14 +28,4 @@ export class AppComponent  {
       }
     })
   }
-
-  ChangeLoginStats() {
-    if(this.currentUser != "Login / Sign Up") {
-      this.router.navigate(['/account']);
-    } else {
-       this.currentUser = "Login / Sign Up";
-       this.router.navigate(['/login']);
-    }
-  }
-
 }

@@ -7,7 +7,6 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SearchByIngredientsComponent } from './search-by-ingredients/search-by-ingredients.component';
 import { SearchByCuisineComponent } from './search-by-cuisine/search-by-cuisine.component';
 import { ShowRecipeComponent } from './show-recipe/show-recipe.component';
-import { LoginPageComponent } from './login-page/login-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,7 +25,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SearchByIngredientsComponent,
     SearchByCuisineComponent,
     ShowRecipeComponent,
-    LoginPageComponent,
     UserAccountPageComponent
   ],
   imports: [
