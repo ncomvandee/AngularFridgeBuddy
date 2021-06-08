@@ -61,7 +61,7 @@
                 <mat-tab label="Comments">
                     <mat-card class="mat-elevation-z0 outline" *ngFor="let review of reviews;">
                         <mat-card-header>
-                        <mat-card-title>Rating: {{review.rate}}</mat-card-title>
+                        <mat-card-title>Rating:<i *ngFor="let rate of [].constructor(review.rate)" id="star-icon" class="fas fa-star"></i></mat-card-title>
                         <mat-card-subtitle>{{review.date}}</mat-card-subtitle>
                         </mat-card-header>
                         <mat-card-content>

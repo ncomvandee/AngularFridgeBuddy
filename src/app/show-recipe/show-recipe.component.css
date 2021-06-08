@@ -5,3 +5,9 @@
 .red {
     color: red;
 }
+
+#star-icon {
+    font-size: smaller;
+    vertical-align: middle;
+    color: gold;
+}
